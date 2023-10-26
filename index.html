@@ -1,111 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-COMMERCE WEBSITE</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    .product-card {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.2s;
-        padding: 15px;
-    }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>E-COMMERCE</title>
+    <style>
+/*Navbar Design*/
+        a {
+            font-weight: bold;
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            color: white;
+            border-radius: 75%;
+            padding: 3px 6px;
+            font-size: 12px;
+        }
 
-    .product-card:hover {
-        transform: scale(1.05);
-    }
+        .btn-primary {
+            position: relative;
+        }
 
-    .card-img {
-        max-height: 200px;
-        object-fit: cover;
-    }
+/* Modal Design*/
+        .modal-content {
+            padding: 20px;
+        }
 
-    .card-title {
-        font-weight: bold;
-    }
+/* Product Card Design */
+        h1.card-title {
+            text-align: center;
+            padding-top: 10px;
+            font-weight: bold;
+        }
 
-    .card-price {
-        color: #007bff;
-    }
+        .product-card {
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            max-height: fit-content;
+            padding: 0;
+        }
 
-    .card-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
+        .card-title, .card-text, .card-price, .card-img {
+            text-align: center;
+            padding: 15px;
+        }
 
-    .btn-favorite {
-        background-color: transparent;
-        border: none;
-        color: #f00; /* Change to your favorite color */
-    }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    .btn-favorite:hover {
-        color: #f44; /* Change to your favorite color */
-    }
-    
-    h1.card-title {
-      text-align: center;
-      padding-top: 10px;
-    }
+        .card-img {
+            max-height: 200px;
+            object-fit: cover;
+        }
 
-    .card-text {
-    max-height: 100px;
-    overflow: auto;
-  }
+        h3 {
+            font-weight: bold;
+            text-align: center;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
 
-  .cart-badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: red;
-    color: white;
-    border-radius: 25%;
-    padding: 3px 6px;
-    font-size: 12px;
-}
-</style>
+        .extra {
+            opacity: 0; 
+        }
+        
+        .card-text {
+            max-height: 100px;
+            overflow: auto;
+            text-align: center;
+            opacity: 0.75; 
+        }
 
+        .card-price {
+            color: black;
+            text-align: center;
+            font-size: 25px;
+            padding-top: 0.1px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn-footer {
+            width: 100%;
+            border: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+    </style>
 </head>
+
 <body>
-    <!--Top Navigation Bar-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">E-COMMERCE</a>
+<!-- Navigation Board -->
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body sticky-top navbar-dark">
+        <div class="container-fluid">
+<!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Products</a>
-            </li>
-      
-            <li>
-                <form class="d-flex">
-                    <input class="form-control me-3" type="search" placeholder="Search Products" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+            <a class="navbar-brand fs-3" href="#">E-COMMERCE</a>
+<!-- Menus -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ms-3">
+                        <a class="nav-link active fs-5" href="#">Products</a>
+                    </li>
+                </ul>
+<!--Add Product-->
+                <button type="button" class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus"> Add a Product</i></button>                
+<!-- Search Bar -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 mb-2" type="search" placeholder="Search Products" aria-label="Search">
+                    <button class="btn btn-outline-success btn-md me-3 mb-2" type="submit">Search</button>
                 </form>
-            </li>
-          </ul>
-      
-          <button type="button" class="btn btn-primary"><i class="icon add-to-cart-icon fas fa-shopping-basket" title="Add to Cart"></i></button>
-          <span class="cart-badge">3</span>
-            
+<!-- Cart Button -->
+                <button type="button" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-shopping-basket" title="Cart"></i>
+                    <span class="cart-badge">3</span>
+                </button>
+            </div>
         </div>
-      </div>
-  </nav>
+    </nav>
 
-  <!--Login and Registration Tab
+
+<!-- Modal (Add a Product)-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" style="font-weight: bold;" id="staticBackdropLabel">ADD A PRODUCT</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+<!--Modal Content-->    
+            <br>
+            <input class="form-control form-control-md" type="text" placeholder="Product Name" aria-label="Product Name">
+            <br>
+            <div class="input-group">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" aria-label="Description"></textarea>
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text">₱</span>
+                <input type="text" class="form-control form-control-lg" aria-label="Peso amount (with dot and two decimal places)">
+                <span class="input-group-text">0.00</span>
+            </div>
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Product Image</label>
+                <input class="form-control form-control-md" type="file" id="formFileMultiple" multiple>
+            </div>
+<!--Modal Footer-->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Product Card -->
+    <h1 class="card-title">PRODUCTS</h1>
+    <div class="container mt-5">
+        <div class="row">
+<!-- Product 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="product-card">
+                    <img class="card-img-top" src="products/product-1.png" alt="Peony & Blush Suede Cologne">
+                    <div class="card-body">
+                        <h3 class="card-title">Peony & Blush Suede Cologne</h3>
+                        <p class="card-text">The essence of charm. Peonies in voluptuous bloom, exquisitely fragile. Flirtatious with the juicy bite of red apple and the opulence of jasmine, rose and gillyflower. Mingling with the sensuality of soft, blush suede. Luxurious and seductive.</p>
+                        <p class="card-price">₱9,300.00</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-outline-light btn-footer" style="background-color: #d9d0b6;" type="button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+<!-- End of Product -->
+<!-- Product 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="product-card">
+                    <img class="card-img-top" src="products/product-2.png" alt="Scarlet Poppy Cologne Intense">
+                    
+                    <div class="card-body">
+                        <h3 class="card-title">Scarlet Poppy Cologne Intense</h3>
+                        <p class="card-text">From poppies in the golden fields of England to the wild steppes of Asia, home of the great scarlet poppy. This ravishing scent has been inspired by its extravagant blooms, and amplified by velvety iris. Barley and tonka bean add a double hit of sweet decadence while a burst of succulent fig draws us into this opulent and moreish fragrance. Available in an eye-catching red bottle.</p>
+                        <p class="card-price">₱12,600.00</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-outline-light btn-footer" style="background-color: #810201;" type="button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+<!-- End of Product -->
+<!-- Product 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="product-card">
+                    <img class="card-img-top" src="products/product-3.png" alt="Nashi Blossom Cologne"> 
+                    <div class="card-body">
+                        <h3 class="card-title">Nashi Blossom Cologne <span class="extra">space</span></h3>
+                        <p class="card-text">As spring awakens, so does nashi blossom. An emblem of purity, these blousy white, speckled flowers bunch along the arching branches of the nashi tree, soon to become succulent pears. With petaly rose, this radiant bloom’s playful fruity scent is cushioned in white musk.</p>
+                        <p class="card-price">₱9,300.00</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-outline-light btn-footer" style="background-color: #d8d19a;" type="button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Login and Registration Tab
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -248,79 +365,6 @@
     </div>
   </div>-->
 
-  <!--Product Card-->
-  <h1 class="card-title">PRODUCTS</h1>
 
-  <div class="container mt-5">
-    <div class="row">
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="product-card">
-          <img class="card-img-top" src="products/product-1.png" alt="Peony & Blush Suede Cologne">
-          
-          <div class="card-body">
-            <h5 class="card-title">Peony & Blush Suede Cologne</h5>
-            <p class="card-text">The essence of charm. Peonies in voluptuous bloom, exquisitely fragile. Flirtatious with the juicy bite of red apple and the opulence of jasmine, rose and gillyflower. Mingling with the sensuality of soft, blush suede. Luxurious and seductive.</p>
-            <p class="card-price">₱9,300.00</p>
-          </div>
-
-          <div class="card-buttons">
-              <button class="btn btn-primary">
-                <i class="icon add-to-cart-icon fas fa-shopping-cart" title="Add to Cart"></i>
-              </button>
-
-              <button class="btn btn-favorite">
-              <i class="icon favorite-icon fas fa-heart"></i> Favorite
-              </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="product-card">
-          <img class="card-img-top" src="products/product-2.png" alt="Scarlet Poppy Cologne Intense">
-          
-          <div class="card-body">
-            <h5 class="card-title">Scarlet Poppy Cologne Intense</h5>
-            <p class="card-text">From poppies in the golden fields of England to the wild steppes of Asia, home of the great scarlet poppy. This ravishing scent has been inspired by its extravagant blooms, and amplified by velvety iris. Barley and tonka bean add a double hit of sweet decadence while a burst of succulent fig draws us into this opulent and moreish fragrance. Available in an eye-catching red bottle.</p>
-            <p class="card-price">₱12,600.00</p>
-          </div>
-
-          <div class="card-buttons">
-              <button class="btn btn-primary">
-                <i class="icon add-to-cart-icon fas fa-shopping-cart" title="Add to Cart"></i>
-              </button>
-
-              <button class="btn btn-favorite">
-              <i class="icon favorite-icon fas fa-heart"></i> Favorite
-              </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="product-card">
-          <img class="card-img-top" src="products/product-3.png" alt="Nashi Blossom Cologne">
-          
-          <div class="card-body">
-            <h5 class="card-title">Nashi Blossom Cologne</h5>
-            <p class="card-text">As spring awakens, so does nashi blossom. An emblem of purity, these blousy white, speckled flowers bunch along the arching branches of the nashi tree, soon to become succulent pears. With petaly rose, this radiant bloom’s playful fruity scent is cushioned in white musk.</p>
-            <p class="card-price">₱9,300.00</p>
-          </div>
-
-          <div class="card-buttons">
-              <button class="btn btn-primary">
-                <i class="icon add-to-cart-icon fas fa-shopping-cart" title="Add to Cart"></i>
-              </button>
-
-              <button class="btn btn-favorite">
-              <i class="icon favorite-icon fas fa-heart"></i> Favorite
-              </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </body>
 </html>
