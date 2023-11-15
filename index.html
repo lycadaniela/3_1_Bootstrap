@@ -70,7 +70,7 @@
             margin-top: 5px;
         }
 
-        .extra {
+        .space {
             opacity: 0; 
         }
         
@@ -102,10 +102,10 @@
 </head>
 
 <body>
-<!-- Navigation Board -->
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body sticky-top navbar-dark">
+
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body sticky-top navbar-dark"><!-- Navigation Board -->
         <div class="container-fluid">
-<!-- Toggler -->
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -119,24 +119,26 @@
                     </li>
                 </ul>
 <!--Add Product-->
-                <button type="button" class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus"> Add a Product</i></button>                
+                <button type="button" class="btn btn-outline-light btn-sm me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus"> Add a Product</i></button>                
 <!-- Search Bar -->
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 mb-2" type="search" placeholder="Search Products" aria-label="Search">
-                    <button class="btn btn-outline-success btn-md me-3 mb-2" type="submit">Search</button>
+                    <input class="form-control me-2 mb-1" type="search" placeholder="Search Products" aria-label="Search">
+                    <button class="btn btn-success btn-md me-3 mb-1" type="submit">Search</button>
                 </form>
 <!-- Cart Button -->
-                <button type="button" class="btn btn-primary btn-lg me-3">
+                <button type="button" class="btn btn-primary btn-lg me-4">
                     <i class="fas fa-shopping-basket" title="Cart"></i>
                     <span class="cart-badge">3</span>
                 </button>
+<!--Login/Register-->
+                <button type="button" class="btn btn-outline-info btn-sm me-2" data-bs-toggle="modal" data-bs-target="#logregBackdrop"><i class="fas fa-user"></i></button> 
             </div>
         </div>
     </nav>
 
 
-<!-- Modal (Add a Product)-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"><!-- Modal (Add a Product)-->
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -169,201 +171,212 @@
         </div>
     </div>
 
-
-<!-- Product Card -->
     <h1 class="card-title">PRODUCTS</h1>
-    <div class="container mt-5">
+    <div class="container mt-5"><!-- Product Card -->
         <div class="row">
-<!-- Product 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="product-card">
-                    <img class="card-img-top" src="products/product-1.png" alt="Peony & Blush Suede Cologne">
-                    <div class="card-body">
-                        <h3 class="card-title">Peony & Blush Suede Cologne</h3>
-                        <p class="card-text">The essence of charm. Peonies in voluptuous bloom, exquisitely fragile. Flirtatious with the juicy bite of red apple and the opulence of jasmine, rose and gillyflower. Mingling with the sensuality of soft, blush suede. Luxurious and seductive.</p>
-                        <p class="card-price">₱9,300.00</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-outline-light btn-footer" style="background-color: #d9d0b6;" type="button">Add to Cart</button>
-                    </div>
+          <div class="col-lg-4 col-md-6 mb-4"><!-- Product 1 -->
+              <div class="product-card">
+                <picture>
+                  <source srcset="https://www.jomalone.com.ph/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png" type="image/png">
+                  <img class="card-img-top" src="products/product-1.png" alt="Peony & Blush Suede Cologne">
+                </picture>
+                <div class="card-body">
+                    <h3 class="card-title">Peony & Blush Suede Cologne</h3>
+                    <p class="card-text">The essence of charm. Peonies in voluptuous bloom, exquisitely fragile. Flirtatious with the juicy bite of red apple and the opulence of jasmine, rose and gillyflower. Mingling with the sensuality of soft, blush suede. Luxurious and seductive.</p>
+                    <p class="card-price">₱9,300.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-outline-light btn-footer" style="background-color: #d9d0b6;" type="button">Add to Cart</button>
+                </div>
+              </div>
+          </div><!-- End of Product -->
+
+          <div class="col-lg-4 col-md-6 mb-4"><!-- Product 2 -->
+            <div class="product-card">
+              <picture>
+                <source srcset="https://www.jomalone.com.ph/media/export/cms/products/1000x1000/jo_sku_LEG301_1000x1000_1.png" type="image/png">
+                <img class="card-img-top" src="products/product-2.png" alt="Scarlet Poppy Cologne Intense">
+              </picture>
+                <div class="card-body">
+                    <h3 class="card-title">Scarlet Poppy Cologne Intense</h3>
+                    <p class="card-text">From poppies in the golden fields of England to the wild steppes of Asia, home of the great scarlet poppy. This ravishing scent has been inspired by its extravagant blooms, and amplified by velvety iris. Barley and tonka bean add a double hit of sweet decadence while a burst of succulent fig draws us into this opulent and moreish fragrance. Available in an eye-catching red bottle.</p>
+                    <p class="card-price">₱12,600.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-outline-light btn-footer" style="background-color: #810201;" type="button">Add to Cart</button>
                 </div>
             </div>
-<!-- End of Product -->
-<!-- Product 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="product-card">
-                    <img class="card-img-top" src="products/product-2.png" alt="Scarlet Poppy Cologne Intense">
-                    
-                    <div class="card-body">
-                        <h3 class="card-title">Scarlet Poppy Cologne Intense</h3>
-                        <p class="card-text">From poppies in the golden fields of England to the wild steppes of Asia, home of the great scarlet poppy. This ravishing scent has been inspired by its extravagant blooms, and amplified by velvety iris. Barley and tonka bean add a double hit of sweet decadence while a burst of succulent fig draws us into this opulent and moreish fragrance. Available in an eye-catching red bottle.</p>
-                        <p class="card-price">₱12,600.00</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-outline-light btn-footer" style="background-color: #810201;" type="button">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-<!-- End of Product -->
-<!-- Product 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="product-card">
-                    <img class="card-img-top" src="products/product-3.png" alt="Nashi Blossom Cologne"> 
-                    <div class="card-body">
-                        <h3 class="card-title">Nashi Blossom Cologne <span class="extra">space</span></h3>
-                        <p class="card-text">As spring awakens, so does nashi blossom. An emblem of purity, these blousy white, speckled flowers bunch along the arching branches of the nashi tree, soon to become succulent pears. With petaly rose, this radiant bloom’s playful fruity scent is cushioned in white musk.</p>
-                        <p class="card-price">₱9,300.00</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-outline-light btn-footer" style="background-color: #d8d19a;" type="button">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+        </div><!-- End of Product -->
+
+          <div class="col-lg-4 col-md-6 mb-4"><!-- Product 3 -->
+            <div class="product-card">
+              <picture>
+                <source srcset="https://www.jomalone.com.ph/media/export/cms/products/1000x1000/jo_sku_LHN601_1000x1000_0.png" type="image/png">
+                <img class="card-img-top" src="products/product-3.png" alt="Nashi Blossom Cologne">
+              </picture>
+              <div class="card-body">
+                <h3 class="card-title">Nashi Blossom Cologne <span class="space">blankspace</span></h3>
+                <p class="card-text">As spring awakens, so does nashi blossom. An emblem of purity, these blousy white, speckled flowers bunch along the arching branches of the nashi tree, soon to become succulent pears. With petaly rose, this radiant bloom’s playful fruity scent is cushioned in white musk.</p>
+                <p class="card-price">₱9,300.00</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-outline-light btn-footer" style="background-color: #d8d19a;" type="button">Add to Cart</button>
+              </div>
+          </div>
         </div>
-    </div>
+      </div>
+  </div><!-- End of Product -->
 
-<!--Login and Registration Tab
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
+  <div class="modal fade" id="logregBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"><!--Login and Registration Tab-->
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+            <div class="container mt-5">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="registration-tab" data-bs-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
+                    </li>
+                  </ul>
+        
+                  <div class="tab-content" id="myTabContent">
+                        
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab"><!--Login Form-->
+                      <form>
+                        <div class="mb-3">
+                          <label for="logEmail" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="logEmail" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                          <label for="logPassword" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="logPassword" placeholder="Enter your password">
+                        </div>
+                        <div class="mb-3">
+                          <a href="#" role="button"type="submit" class="btn btn-primary" id="btnLog">Login</a>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalToggle2" class="btn btn-link">Forgot Password?</a>
+                        </div>
+                      </form>
+                              
+                    </div>
+                          
+                    <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab"><!--Register Form-->
+                      <form class="registration_form">
 
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
-          </li>
+                        <div class="mb-3">
+                          <label for="regName" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="regName" placeholder="Enter your name">
+                        </div>
 
-          <li class="nav-item">
-            <a class="nav-link" id="registration-tab" data-bs-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="false">Registration</a>
-          </li>
-        </ul>
-
-      <div class="tab-content" id="myTabContent">-->
-
-        <!--Login Form
-        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-          <form>
-              <div class="mb-3">
-                <label for="logEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email">
-              </div>
-
-              <div class="mb-3">
-                <label for="logPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
-              </div>
-
-              <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Login</button>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" class="btn btn-link">Forgot Password?</a>
-              </div>
-            </form>
-        </div>-->
-
-          <!--Register Form
-        <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
-          <form>
-            <div class="mb-3">
-              <label for="regEmail" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="regEmail" placeholder="Enter your email">
-            </div>
-
-            <div class="mb-3">
-              <label for="regName" class="form-label">Name</label>
-              <input type="email" class="form-control" id="regEmail" placeholder="Enter your name">
-            </div>
-
-            <div class="mb-3">
-              <label for="regPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="regPassword" placeholder="Create a password">
-            </div>
-
-            <div class="mb-3">
-              <label for="regConPassword" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" id="regPassword" placeholder="Confirm password">
-            </div>
+                        <div class="mb-3">
+                          <label for="regEmail" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="regEmail" placeholder="Enter your email">
+                        </div>
               
-            <div class="container mt-3">
-              <div class="mt-2 row">
-                <label for="radioGender">Gender</label>
-                <div class="form-check col-4">
-                  <input class="form-check-input" type="radio" name="radioGender" id="flexRadioDefault1" checked>
-                  <label class="form-check-label" for="flexRadioDefault1">Rather not say</label>
+                        <div class="mb-3">
+                          <label for="regPassword" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="regPassword" placeholder="Create a password">
+                        </div>
+              
+                        <div class="mb-3">
+                          <label for="regConPassword" class="form-label">Confirm Password</label>
+                          <input type="password" class="form-control" id="regConPassword" placeholder="Confirm password">
+                        </div>
+                              
+                        <div class="container mt-3">
+                          <div class="mt-2 row">
+                            
+                              <label>Gender</label>
+                              <div class="form-check col-4">
+                                <input class="form-check-input" type="radio" name="radioGender" id="radioNot" checked>
+                                <label class="form-check-label" for="radioNot">Rather not say</label>
+                              </div>
+                
+                              <div class="form-check col-4">
+                                <input class="form-check-input" type="radio" name="radioGender" id="radioMale">
+                                <label class="form-check-label" for="radioMale">Male</label>
+                              </div>
+                
+                              <div class="form-check col-4">
+                                <input class="form-check-input" type="radio" name="radioGender" id="radioFemale">
+                                <label class="form-check-label" for="radioFemale">Female</label>
+                              </div>
+                            
+                          </div>
+                        </div>
+              
+                        <div class="mt-3">
+                          <div class="form-floating">
+                            <select id="regYear" class="form-select" aria-label="Default select example">
+                              <option selected value="0">Select Year Level...</option>
+                              <option value="1">1st Year</option>
+                              <option value="2">2nd Year</option>
+                              <option value="3">3rd Year</option>
+                              <option value="4">4th Year</option>
+                            </select>
+                            <label for="regYear">Year Level</label>
+                          </div>
+                        </div>
+              
+                        <div class="mt-3">
+                          <div class="input-group">
+                            <span class="input-group-text">Address</span>
+                            <textarea class="form-control" aria-label="With textarea" id="regAddress"></textarea>
+                          </div>
+                        </div>
+              
+                        <div class="mt-3">
+                          <div class="form-floating mb-3">
+                            <input type="date" class="form-control" id="regBirthdate" placeholder="Birthdate">
+                            <label for="regBirthdate">Birthdate</label>
+                          </div>
+                        </div>
+              
+                        <a href="#" role="button"type="submit" class="btn btn-primary" id="btnReg">Register</a>
+                        <br><br><br>
+                      </form>       
+                    </div>              
+                    </div>
                 </div>
-
-                <div class="form-check col-4">
-                  <input class="form-check-input" type="radio" name="radioGender" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">Male</label>
-                </div>
-
-                <div class="form-check col-4">
-                  <input class="form-check-input" type="radio" name="radioGender" id="flexRadioDefault2">
-                  <label class="form-check-label" for="flexRadioDefault2">Female</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <div class="form-floating">
-                <select id="floatingSelect" class="form-select" aria-label="Default select example">
-                  <option selected>Select Year Level...</option>
-                  <option value="1">1st Year</option>
-                  <option value="2">2nd Year</option>
-                  <option value="3">3rd Year</option>
-                  <option value="4">4th Year</option>
-                </select>
-                  <label for="floatingSelect">Year Level</label>
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <div class="input-group">
-                <span class="input-group-text">Address</span>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
-              </div>
-            </div>
-
-                <div class="mt-3">
-                  <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="floatingDate" placeholder="Birthdate">
-                    <label for="floatingDate">Birthdate</label>
-                  </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Register</button>
-                <br><br><br>
-              </form>
-            </div>-->
-
-            <!--Forgot Password Form
-            <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-
-              <div class="modal-body">
-                <p>Enter your email address, and we will send you a password reset link.</p>
-                <form>
-                  <div class="mb-3">
-                    <label for="forgotPasswordEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="forgotPasswordEmail" placeholder="Enter your email">
-                  </div>
-                </form>
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
-              </div>
               </div>
             </div>
         </div>
-      </div>
-      </div>
     </div>
-  </div>-->
+</div>
+
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1"><!--Forgot Password Modal-->
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+  <div class="modal-body">
+    <p>Enter your email address, and we will send you a password reset link.</p>
+    <form>
+      <div class="mb-3">
+        <label for="forgotPasswordEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="forgotPasswordEmail" placeholder="Enter your email">
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary">Submit</button>
+  </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <script src="index.js"></script>
+</footer>
 
 
 </body>
